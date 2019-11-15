@@ -1,0 +1,16 @@
+
+import requests
+
+value = 'Token 730ab1963ed12ac6fed5b99ade9b4dd9b5707d67'
+body_val = {
+    "name": "Java",
+    "author": "XXX33",
+    "price": 22934.3,
+    "qty": 203,
+    "publication": "TTTT",
+    "reviews": "stars"
+}
+response = requests.post('http://localhost:8000/v1/book/',
+                         headers={'Authorization':value},json=body_val)
+print(response.status_code)
+print(response.json())
